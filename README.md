@@ -8,3 +8,4 @@
 - 6/9 (p. 157 ~ 188 ) - IterationSample(리스트 추가,삭제 가능) , LifeCycle
 - 6/10 (p. 189 ~ 215) Hooks
 - 6/11 (p. 216 ~ 252) 컴포넌트 스타일링(styled-component)
+- 6/12 (p. 253 ~ 273) Todo List 틀 만들기
