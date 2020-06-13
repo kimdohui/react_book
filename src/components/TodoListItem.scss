@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   &:nth-child(even) {
-    background: #f4f4f5;
+    background: #f0f2f3;
   }
 
   .checkbox {
@@ -17,34 +17,35 @@
       font-size: 1.5rem;
     }
     .text {
-      margin-left : 0.5rem;
-      flex: 1; // 차지 가능한 모든 영역 차지
+      margin-left: 0.5rem;
+      flex: 1;
     }
 
+    //체크 되었을때
     &.checked {
-      svg{
-        color: #22b8cf;
+      svg {
+        color: #e46666;
       }
+
       .text {
-        color : #adb5bd;
+        color: #ec6c6c;
         text-decoration: line-through;
       }
     }
   }
-
   .remove {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    color : #ff6b6b;
+    color: #ff6b6b;
     cursor: pointer;
-    &:hover{
-      color: #ff8787;
+    &:hover {
+      border-top: 1px solid #dee2e6;
     }
   }
 
-  //엘리먼트 사이사이에 테두리 넣음
-  &+& {
+  //엘리먼트 사이사이에 테두리 넣기
+  & + & {
     border-top: 1px solid #dee2e6;
   }
 }
