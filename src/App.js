@@ -1,32 +1,33 @@
 import React, { useState } from "react";
-import TodoTemplate from "./components/TodoTemplate";
-import TodoInsert from "./components/TodoInsert";
-import TodoList from "./components/TodoList";
+import axios from "axios";
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "리엑트의 기초 알아보기",
-      checked: true
-    },
-    {
-      id: 2,
-      text: "컴포넌트 스타일링 해보기",
-      checked: true
-    },
-    {
-      id: 3,
-      text: "일정 관리 앱 만들어 보기",
-      checked: false
+  const [data, setData] = useState(null);
+
+  const onClick = async () => {
+    try {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      );
+      setData(response.data);
+    } catch (e) {
+      console.log(e);
     }
-  ]);
+  };
 
   return (
-    <TodoTemplate>
-      <TodoInsert />
-      <TodoList todos={todos} />
-    </TodoTemplate>
+    <div>
+      <div>
+        <button onClick={onClick}>불러오기</button>
+      </div>
+      {data && (
+        <textarea
+          rows={7}
+          value={JSON.stringify(data, null, 2)}
+          readOnly={true}
+        />
+      )}
+    </div>
   );
 };
 
