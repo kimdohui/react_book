@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.19.1",
     "classnames": "2.2.6",
     "qs": "6.9.4",
     "react": "16.12.0",
